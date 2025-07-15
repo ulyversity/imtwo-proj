@@ -17,7 +17,7 @@ class Repository implements IRepository {
     protected $ModelName;
     protected $ModelExcludedProp;
 
-    public function __construct(string $modelName, string $tableName='') {
+    public function __construct(string $modelName) {
         $this->ConnectionDB = connectDB('im2project');
         $this->CurrentModel = new $modelName();
         $this->ModelName = $modelName;
@@ -150,7 +150,15 @@ class Repository implements IRepository {
         
         $query = "INSERT INTO $tableName($columnList) VALUES($valueList);";
         $this->logQuery($query);
-        return $this->ConnectionDB->query($query);
+
+        if ($this->ConnectionDB->query($query) === true)
+        {
+            return $this->ConnectionDB->insert_id;
+        }
+        else {
+            return -1;
+        }
+        
     }
     public function update(object $model)
     {

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class Supply {
+class ServiceType {
     public int $ID;
     public string $Name;
     public float $ValuePerKG;

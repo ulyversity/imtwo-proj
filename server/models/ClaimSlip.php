@@ -1,0 +1,24 @@
+<?php
+declare(strict_types=1);
+
+class ClaimSlip {
+    public int $ID;
+    public int $OrderID;
+    public string $FirstName;
+    public string $LastName;
+    public string $DateReceived;
+    public string $DateDue;
+
+    public function __construct(array $data = null)
+    {
+        if ($data === null)
+            return;
+
+        $this->ID = (int) $data['ID'];
+        $this->OrderID = (int) $data['OrderID'];
+        $this->FirstName = $data['FirstName'];
+        $this->LastName = $data['LastName'];
+        $this->DateReceived = $data['DateReceived'];
+        $this->DateDue = $data['DateDue'];
+    }
+}

@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0b11;
+    font-family: sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    width: fit-content;
+}
+
+
+.top-bar-div, .pending-order-div, .supply-list-outer-div, .login-outer-div, .index-outer-div {
+    background-color: #10121c;
+    color: #f2f0e5;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f2f0e5;
+    border-radius: 20px;
+    margin: 4px;
+    padding: 20px;
+}
+
+.login-inner-div form, .index-inner-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-outer-div, .index-outer-div {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+}
+
+.login-inner-div form button {
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.login-page-background, .index-page-background {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-page-background {
+    background-image: url("../assets/washing-machine.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+
+.pending-order-div {
+    width: 50%;
+}
+
+.supply-list-outer-div {
+    width: 50%;
+}
+
+.supply-quantity-span p {
+    display: inline;
+    color: #f3a833;
+}
+
+.two-block-div {
+    display: flex;
+    flex-direction: row;
+}

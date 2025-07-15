@@ -12,7 +12,7 @@ if (isset($_SESSION['userID']))
     <title>Document</title>
 </head>
 <body>
-    <form action="backend/endpoints/login_action.php" method="POST">
+    <form action="server/endpoints/login_action.php" method="POST">
         <label for="txtUsername">Username:</label>
         <input type="text" name="username" id="txtUsername">
         <label for="txtPassword">Password:</label>

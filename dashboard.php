@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-        include "backend/views/Dashboard_OrderStatusView.php";
-        include "backend/views/Dashboard_SupplyListView.php";
+        include "server/views/Dashboard_OrderStatusView.php";
+        include "server/views/Dashboard_SupplyListView.php";
     ?>
 </body>
 </html>

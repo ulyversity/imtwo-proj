@@ -12,11 +12,11 @@ session_start();
 <body>
     <p>Role:  
         <?php 
-            include "backend/views/CurrentRoleView.php";
+            include "server/views/CurrentRoleView.php";
         ?>
     </p>
     <button><a href="login.php">login</a></button>  
-    <form action="backend/endpoints/logout_action.php">
+    <form action="server/endpoints/logout_action.php">
         <button>logout</button>
     </form>
     

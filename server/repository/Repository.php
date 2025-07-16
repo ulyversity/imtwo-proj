@@ -105,7 +105,7 @@ class Repository implements IRepository {
     }
 
     private function logQuery(string $queryString){
-        echo "<script>console.log('repo-query: $queryString');</script>";
+        echo "<script>console.log(\"repo-query: $queryString\");</script>";
     }
 
     public function getAll()

@@ -2,7 +2,7 @@
 require_once __DIR__."/../repository/OrderDetailRepository.php";
 
 $orderDetailRepository = new OrderDetailRepository();
-$orderDetails = $orderDetailRepository->getOrderDetails();
+$orderDetails = $orderDetailRepository->getAll();
 ?>
 
 <table>

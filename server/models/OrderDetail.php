@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 class OrderDetail {
     
-    public int $OrderID;
+    public int $ID;
     public string $Customer;
     public string $CustomerNumber;
     public string $Status;
@@ -20,7 +20,7 @@ class OrderDetail {
         if ($data === null)
             return;
 
-        $this->OrderID = (int) $data['OrderID'];
+        $this->ID = (int) $data['ID'];
         $this->Customer = $data['Customer'];
         $this->CustomerNumber = $data['CustomerNumber'] ?? '';
         $this->Status = $data['Status'];

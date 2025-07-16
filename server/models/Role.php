@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 class Role {
+    public string $TableNameAlias = "roles";
     public int $ID;
     public string $Name;
 

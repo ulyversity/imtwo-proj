@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 class Receipt {
+    public string $TableNameAlias = "receipts";
     public int $ID;
     public int $OrderID;
     public float $Due;

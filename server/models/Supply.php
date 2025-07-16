@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 class Supply {
-    public string $TableNameAlias = "Supplies";
+    public string $TableNameAlias = "supplies";
 
     public int $ID;
     public string $Name;

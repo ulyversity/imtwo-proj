@@ -5,19 +5,26 @@ $supplyRepository = new SupplyRepository();
 $supplyList = $supplyRepository->getAll();
 ?>
 
-<p>SupplyList:</p>
+<div class="supply-list-outer-div">
+<div class="supply-list-title-div">
+    <p class="supply-list-title-p">SupplyList:</p>
+</div>
+
+<div class="supply-list-inner-div">
 <?php foreach($supplyList as $supply): ?>
-    <span><?php echo $supply->Name ?></span> 
-    <span>
+    <span class="supply-name-span"><?php echo $supply->Name ?></span> 
+    <span class='supply-quantity-span'>
         <?php 
             $quantity = $supply->Quantity; 
             if ($quantity > 5)
-                echo "In Stock";
+                echo "<p class='supply-quantity-p'>In Stock</p>";
             else if ($quantity > 0)
-                echo "Low Stock";
+                echo "<p class='supply-quantity-p'>Low Stock</p>";
             else
-                echo "No Stock";
+                echo "<p class='supply-quantity-p'>No Stock</p>";
         ?>
     </span>
     <br>
 <?php endforeach ?>
+</div>
+</div>

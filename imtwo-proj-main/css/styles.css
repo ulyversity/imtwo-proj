@@ -1,0 +1,196 @@
+:root {
+    --darkblue: #10121c;
+    --darkerblue: #0c0d16;
+    --white: #f2f0e5;
+    --yellow: #f3a833;
+    --gray: #f1f1f1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--darkerblue);
+    font-family: sans-serif;
+}
+
+p, a, li {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--darkerblue);
+}
+
+button {
+    width: fit-content;
+}
+
+.pending-order-div, .supply-list-outer-div, .login-outer-div, .index-outer-div, .top-bar-nav, .order-list-table {
+    background-color: var(--gray);
+    color: var(--darkerblue);
+    border-radius: 20px;
+    /* border-color: var(--darkerblue); */
+    /* border-width: 0.5px; */
+    /* border-style: solid; */
+    margin-top: 2px;
+    /* margin-bottom: 2px; */
+    margin-right: 4px;
+    margin-left: 4px;
+    padding: 20px;
+}
+
+.top-bar-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.top-bar-nav {
+    background-color: var(--yellow);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.login-inner-div form, .index-inner-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-outer-div, .index-outer-div {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+}
+
+.login-inner-div form button {
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.login-page-background, .index-page-background {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-page-background {
+    background-image: url("../assets/washing-machine.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+
+.pending-order-div {
+    width: 50%;
+    height: 100%;
+    margin-right: 0;
+}
+
+.supply-list-outer-div {
+    width: 50%;
+    height: 100%;
+
+}
+
+.supply-quantity-span p {
+    display: inline;
+    color: var(--yellow);
+}
+
+.two-block-div {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.order-list-table {
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    width: 99%;
+    align-self: center;
+}
+
+.add-order-a {
+    color: var(--yellow);
+}
+
+/* Style all input fields and select dropdown */
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Add glowing focus effect */
+form input:focus,
+form select:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.6);
+    outline: none;
+}
+
+/* Style readonly fields */
+form input[readonly] {
+    background-color: #e0e0e0;
+    color: #666;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    margin: auto;
+}
+
+form label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+form input,
+form select {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Align the KG span neatly next to input */
+#numLoadCount {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+form span {
+    margin-left: 10px;
+    color: #ffcc00;
+    font-style: italic;
+}
+
+

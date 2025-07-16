@@ -5,7 +5,7 @@ $orderDetailRepository = new OrderDetailRepository();
 $orderDetails = $orderDetailRepository->getOrderDetails();
 ?>
 
-<table>
+<table class="order-list-table">
     <thead>
         <tr>
             <th>Order #</th>

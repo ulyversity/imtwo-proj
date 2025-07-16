@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 class ClaimSlip {
+    public string $TableNameAlias = "claimslips";
     public int $ID;
     public int $OrderID;
     public string $FirstName;

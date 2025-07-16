@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 class Status {
-    public string $TableNameAlias = "Status";
+    public string $TableNameAlias = "status";
 
     public int $ID;
     public string $Name;

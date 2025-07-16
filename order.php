@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>ORDERS:</h1>
-    <?php
-        include "server/views/Order_OrderDetailsView.php";
-    ?>
-</body>
-</html>
+<?php
+$pageTitle = "Orders";
+$includeNavbar = true;
+include_once "template/header.php";
+?>
+
+<h1>ORDERS:</h1>
+<?php
+    include "server/views/Order_OrderDetailsView.php";
+?>
+
+
+<?php include_once "template/footer.php"; ?>

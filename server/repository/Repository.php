@@ -180,12 +180,10 @@ class Repository implements IRepository {
         return $this->ConnectionDB->query($query);
     }
 
-    public function search(string $predicate="")
+    public function query(string $queryString)
     {
-        $tableName = $this->getTableName();
-        $query = "SELECT * FROM $tableName $predicate;";
-        $this->logQuery($query);
-        $result = $this->ConnectionDB->query($query);
+        $this->logQuery($queryString);
+        $result = $this->ConnectionDB->query($queryString);
 
         $modelList = array();
 

@@ -8,5 +8,5 @@ interface IRepository {
     public function add(object $model);
     public function update(object $model);
     public function delete(int $id);
-    public function search(string $predicate);
+    public function query(string $queryString);
 }

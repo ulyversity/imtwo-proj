@@ -20,14 +20,7 @@ INNER JOIN users U ON U.ID = O.StaffID
 LEFT JOIN receipts R ON O.ID = R.OrderID
 GROUP BY OrderID, Customer, CustomerNumber, Status, LoadCount, Total, Services, Staff, DateDue
 ORDER BY O.ID;";
-        $result = $this->ConnectionDB->query($query);
 
-        $orderDetailList = array();
-
-        while($row = $result->fetch_assoc()) {
-            $current = new OrderDetail($row);
-            array_push($orderDetailList, $current);
-        }
-        return $orderDetailList;
+        return $this->query($query);
     }
 }

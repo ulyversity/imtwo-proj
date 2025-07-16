@@ -10,6 +10,7 @@
     else if ($current_file_name !== 'login.php')
     {
         header("Location: login.php");
+        die();
     }
 ?>
 

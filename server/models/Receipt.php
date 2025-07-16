@@ -5,9 +5,7 @@ class Receipt {
     public string $TableNameAlias = "receipts";
     public int $ID;
     public int $OrderID;
-    public float $Due;
     public float $AmountPaid;
-    public float $Balance;
 
     public function __construct(array $data = null)
     {
@@ -16,8 +14,6 @@ class Receipt {
 
         $this->ID = (int) $data['ID'];
         $this->OrderID = (int) $data['OrderID'];
-        $this->Due = (float) $data['Due'];
         $this->AmountPaid = (float) $data['AmountPaid'];
-        $this->Balance = (float) $data['Balance'];
     }
 }

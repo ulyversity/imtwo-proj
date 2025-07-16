@@ -13,11 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($username === '' || $password === '')
     {
         header("Location: ../../index.php?Error=MissingFields");
+        die();
     }
 
     $userFound = $UserRepository->query("SELECT * FROM Users WHERE (username = '$username' OR email = '$username') AND password = '$password'");
 
-    if (count($userFound) === 0 ) {
+    if (count($userFound) == 0 ) {
         $error = "IncorrectCredentials";
     }
 

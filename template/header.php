@@ -7,6 +7,10 @@
     {
         echo "<script>console.log('{$_SESSION['name']} is currently logged in');</script>";
     }
+    else if ($current_file_name !== 'login.php')
+    {
+        header("Location: login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +28,8 @@
         <ul>
             <li><a class="<?php if ($current_file_name === "index.php") echo 'active '?>" href="index.php">Home</a></li>
             <li><a class="<?php if ($current_file_name === "order.php") echo 'active '?>" href="order.php">Orders</a></li>
+
+            <li><a href="server/endpoints/logout_action.php">Logout</a></li>
         </ul>
     </nav>
 <?php endif; ?>

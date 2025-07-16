@@ -13,6 +13,7 @@ class OrderDetail {
     public string $Services;
     public string $Staff;
     public string $DateDue;
+    public string $DateClaimed;
 
 
     public function __construct(array $data = null)
@@ -30,6 +31,7 @@ class OrderDetail {
         $this->Services = $data['Services'];
         $this->Staff = $data['Staff'];
         $this->DateDue = $data['DateDue'];
+        $this->DateClaimed = $data['DateClaimed'] ?? '';
 
     }
 }

@@ -18,13 +18,19 @@ $orderDetails = $orderDetailRepository->getAll();
             <th>Services</th>
             <th>Staff</th>
             <th>Date Due</th>
+            <th>Is Claimed</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach($orderDetails as $orders): ?>
             <tr>
-                <?php foreach ($orders as $value): ?>
-                    <td> <?php echo $value ?> </td>
+                <?php foreach ($orders as $key => $value): ?>
+                <td>
+                    <?php if($key === "ID"): ?>
+                        <a href='view-order.php?orderID=<?php echo$value ?>'> <?php echo $value ?></a>
+                    <?php elseif($key === "DateClaimed" && $value !== ''): echo "✔️";?>
+                    <?php else: echo $value; endif;?>
+                </td>
                 <?php endforeach ?>
             </tr>
         <?php endforeach ?>

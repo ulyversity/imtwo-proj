@@ -10,40 +10,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $claimSlipRepository = new ClaimSlipRepository();
     $serviceTypeRepository = new ServiceTypeRepository();
 
-    $name = trim($_POST['name'] ?? '');
-    $number = trim($_POST['number'] ?? '');
-    $loadCount = trim($_POST['load'] ?? '');
+    $firstName = trim($_POST['firstName'] ?? '');
+    $lastName = trim($_POST['lastName'] ?? '');
+    $number = trim($_POST['phoneNumber'] ?? '');
+    $loadCount = trim($_POST['loadCount'] ?? '');
     $serviceTypeID = trim($_POST['serviceTypeID'] ?? '');
     
-    $paid = $_POST['paid'] ?? 0;
+    $paid = $_POST['amountPaid'] ?? 0;
     $staffID = $_POST['staffID'] ?? $_SESSION['userID'];
-    $amount = $_POST['amount'] ?? 0;
-    $balance = $_POST['balance'] ?? 0;
 
-    if ($name === '' || $number === '' || $loadCount === '' || $serviceTypeID === '')
+    if ($firstName === '' || $lastName === '' || $number === '' || $loadCount === '' || $serviceTypeID === '')
     {
-        header("Location: ../../order.php?Error=MissingFields");
+        header("Location: ../../add-order.php?Error=MissingFields");
         die();
     }
 
-    if ($amount === 0)
-    {
-        $currentServiceType = $serviceTypeRepository->get($serviceTypeID);
-        $amount = $loadCount * $currentServiceType->ValuePerKG;
-    }
+    $currentServiceType = $serviceTypeRepository->get($serviceTypeID);
+    $totalAmount = $loadCount * $currentServiceType->ValuePerKG;
 
     $order = new Order();
     $order->StatusID = 1;
     $order->ServiceTypeID = $serviceTypeID;
     $order->StaffID = $staffID;
     $order->LoadCount = $loadCount;
-    $order->TotalAmount = $amount;
+    $order->TotalAmount = $totalAmount;
     $newOrderID = $ordeRepository->add($order);
-
-    $name = explode(" ", $name);
-    # REFACTOR: this will throw an error or yield unexpected result when array length != 2;
-    $firstName = $name[0];
-    $lastName = $name[1];
 
     $claimSlip = new ClaimSlip();
     $claimSlip->OrderID = $newOrderID;
@@ -52,11 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $claimSlip->PhoneNumber = $number;
     $claimSlipRepository->add($claimSlip);
 
-
     if ($paid > 0)
     {
-        if ($balance === 0)
-            $balance = max($totalAmount - $paid, 0);
+        $balance = max($totalAmount - $paid, 0);
 
         $receipt = new Receipt();
         $receipt->OrderID = $newOrderID;

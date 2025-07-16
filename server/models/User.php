@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 class User {
+    public string $TableNameAlias = "users";
+
     public int $ID;
     public int $RoleID;
     public string $FirstName;

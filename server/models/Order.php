@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 class Order {
+    public string $TableNameAlias = "orders";
     public int $ID;
     public int $StatusID;
     public int $ServiceTypeID;

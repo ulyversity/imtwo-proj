@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 class ServiceType {
+    public string $TableNameAlias = "servicetypes";
     public int $ID;
     public string $Name;
     public float $ValuePerKG;

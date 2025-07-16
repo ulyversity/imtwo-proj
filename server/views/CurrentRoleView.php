@@ -9,5 +9,5 @@ if(isset($_SESSION['roleID']))
     echo "$currentRole->Name";
 }
 else {
-    echo "VISITOR";
+    echo "<p class='role-p'>VISITOR</p>";
 }

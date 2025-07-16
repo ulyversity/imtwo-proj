@@ -9,7 +9,8 @@ $inProgressOrders = array_values(array_filter($orderList, fn($order) => $order->
 $completedOrders = array_values(array_filter($orderList, fn($order) => $order->StatusID === 3));
 ?>
 
-
-<p>Pending Orders: <?php echo count($pendingOrders) ?></p>
-<p>In Progress Orders: <?php echo count($inProgressOrders) ?></p>
-<p>Completed Orders: <?php echo count($completedOrders) ?></p>
+<div class="pending-order-div">
+    <p class="pending-order-p">Pending Orders: <?php echo count($pendingOrders) ?></p>
+    <p class="pending-order-p">In Progress Orders: <?php echo count($inProgressOrders) ?></p>
+    <p class="pending-order-p">Completed Orders: <?php echo count($completedOrders) ?></p>
+</div>

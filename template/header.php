@@ -24,9 +24,9 @@
 </head>
 <body>
 <?php if(isset($includeNavbar) && $includeNavbar === true): ?>
-    <nav>
+    <nav class="top-bar-nav">
         <ul>
-            <li><a class="<?php if ($current_file_name === "index.php") echo 'active '?>" href="index.php">Home</a></li>
+            <li><a class="<?php if ($current_file_name === "index.php") echo 'active '?>" href="index.php">Dashboard</a></li>
             <li><a class="<?php if ($current_file_name === "order.php") echo 'active '?>" href="order.php">Orders</a></li>
 
             <li><a href="server/endpoints/logout_action.php">Logout</a></li>

@@ -42,4 +42,9 @@ WHERE DATE(CS.DateReceived) > DATE_ADD(CURDATE(), INTERVAL -1 WEEK);");
     {
         return $this->queryObject("SELECT SUM(AmountPaid) As TotalAmountPaid FROM receipts;")[0]->TotalAmountPaid;
     }
+
+    public function getMaxLoadCounttOrder()
+    {
+        return $this->queryObject("SELECT MAX(LoadCount) As LoadCount FROM Orders")[0]->LoadCount;
+    }
 }

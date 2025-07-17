@@ -3,7 +3,7 @@ $pageTitle = "Analytics";
 $includeNavbar = true;
 include_once "template/header.php";
 if ($_SESSION['roleID'] == 2):
-    echo "You don't have permission to view this file";
+    echo "You don't have permission to access this page";
 else:
     require_once __DIR__."/server/repository/OrderRepository.php";
     require_once __DIR__."/server/repository/ServiceTypeRepository.php";
@@ -43,6 +43,8 @@ else:
     $pendingOrders = array_values(array_filter($orderList, fn($order) => $order->StatusID === 1));
     $inProgressOrders = array_values(array_filter($orderList, fn($order) => $order->StatusID === 2));
     $completedOrders = array_values(array_filter($orderList, fn($order) => $order->StatusID === 3));
+
+    $maxLoadCount = $orderRepository->getMaxLoadCounttOrder();
 ?>
 
 <h1>ANALYTICS</h1>
@@ -72,10 +74,8 @@ else:
 <p>Completed Orders: <?php echo count($completedOrders) ?></p>
 
 <h2>Misc</h2>
-<p>Highest kg order: 100kg</p>
+<p>Highest kg order: <?php echo $maxLoadCount ?>kg</p>
 
 <h2>Supplies</h2>
-<p>yada yada yada</p>
-
 
 <?php endif; include_once "template/footer.php"; ?>

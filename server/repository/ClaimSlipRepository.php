@@ -9,4 +9,9 @@ class ClaimSlipRepository extends Repository {
     public function __construct(){
         parent::__construct(ClaimSlip::class);
     }
+
+    public function getUniqueCustomers()
+    {
+        return $this->queryObject("SELECT FirstName, LastName, PhoneNumber, COUNT(*) TotalOrders FROM claimslips GROUP BY FirstName, LastName;");
+    }
 }

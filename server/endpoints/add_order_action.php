@@ -49,9 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $receipt = new Receipt();
         $receipt->OrderID = $newOrderID;
-        $receipt->Due = $totalAmount;
         $receipt->AmountPaid = $paid;
-        $receipt->Balance = $balance;
         $receiptRepository->add($receipt);
     }
     header("Location: ../../order.php");

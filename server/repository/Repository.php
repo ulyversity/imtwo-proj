@@ -193,4 +193,19 @@ class Repository implements IRepository {
         }
         return $modelList;
     }
+
+    public function queryObject(string $queryString)
+    {
+        $this->logQuery($queryString);
+        $result = $this->ConnectionDB->query($queryString);
+
+        $modelList = array();
+
+        if ($result) {
+            while($row = $result->fetch_object()) {
+                array_push($modelList, $row);
+            }
+        }
+        return $modelList;
+    }
 }

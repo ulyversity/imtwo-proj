@@ -31,11 +31,11 @@
             <li><a class="<?php if ($current_file_name === "order.php") echo 'active '?>" href="order.php">Orders</a></li>
             <li><a class="<?php if ($current_file_name === "customers.php") echo 'active '?>" href="customers.php">Customers</a></li>
             <li><a class="<?php if ($current_file_name === "supplies.php") echo 'active '?>" href="supplies.php">Supplies</a></li>
-            <?php if($_SESSION['roleID'] == 1):?>
-            <li><a class="<?php if ($current_file_name === "employees.php") echo 'active '?>" href="employees.php">Employees</a></li>
-            <?php endif; ?>
             <?php if($_SESSION['roleID'] == 1 || $_SESSION['roleID'] == 3):?>
                 <li><a class="<?php if ($current_file_name === "analytics.php") echo 'active '?>" href="analytics.php">Analytics</a></li>
+            <?php endif; ?>
+            <?php if($_SESSION['roleID'] == 1):?>
+            <li><a class="<?php if ($current_file_name === "employees.php") echo 'active '?>" href="employees.php">Employees</a></li>
             <?php endif; ?>
             <li><a href="server/endpoints/logout_action.php">Logout</a></li>
         </ul>

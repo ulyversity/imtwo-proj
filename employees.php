@@ -3,6 +3,10 @@ $pageTitle = "Employees";
 $includeNavbar = true;
 include_once "template/header.php";
 
+if ($_SESSION['roleID'] != 1):
+    echo "You don't have permission to access this page";
+else:
+
 require_once __DIR__."/server/repository/UserRepository.php";
 $userRepository = new UserRepository();
 $userList = $userRepository->getAll();
@@ -51,4 +55,4 @@ $userList = $userRepository->getAll();
 </main>
 
 
-<?php include_once "template/footer.php"; ?>
+<?php endif; include_once "template/footer.php"; ?>

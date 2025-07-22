@@ -52,7 +52,7 @@ $orderDetails = $orderDetailRepository->getAll();
         <button id="btn-reset" class="generic-btn zero-margin">Reset Filter</button>
     </div>
 
-    <table class="generic-table order-list-table ">
+    <table class="generic-table orders-table ">
         <thead>
             <tr>
                 <th>Order #</th>

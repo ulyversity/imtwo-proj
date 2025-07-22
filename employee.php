@@ -4,6 +4,10 @@ $includeNavbar = true;
 include_once "template/header.php";
 require_once __DIR__."/server/repository/UserRepository.php";
 
+if ($_SESSION['roleID'] != 1):
+    echo "You don't have permission to access this page";
+else:
+
 $userRepository = new UserRepository();
 
 $isEditMode = isset($_GET['userID']);
@@ -67,4 +71,4 @@ $btnText = $isEditMode ? "Edit" : "Add";
     </form>
 </main>
 
-<?php include_once "template/footer.php"; ?>
+<?php endif; include_once "template/footer.php"; ?>

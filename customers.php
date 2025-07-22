@@ -20,7 +20,7 @@ $customerList = $claimSlipRepository->getUniqueCustomers();
         <input type="text" id="txtName" class="generic-txt" placeholder="Name or Number">    
     </div>
 
-    <table class="generic-table customer-list-table">
+    <table class="generic-table customers-table">
         <thead>
             <tr>
                 <th>First Name</th>

@@ -19,9 +19,9 @@ $supplyList = $supplyRepository->getAll();
             if ($quantity > 5)
                 echo "<p class='supply-quantity-p'>In Stock</p>";
             else if ($quantity > 0)
-                echo "<p class='supply-quantity-p'>Low Stock</p>";
+                echo "<p class='supply-quantity-p low-stock'>Low Stock</p>";
             else
-                echo "<p class='supply-quantity-p'>No Stock</p>";
+                echo "<p class='supply-quantity-p no-stock'>No Stock</p>";
         ?>
     </span>
     <br>

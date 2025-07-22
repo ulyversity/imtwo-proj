@@ -4,6 +4,7 @@
     --white: #f2f0e5;
     --yellow: #f3a833;
     --gray: #f1f1f1;
+    --bright-red: #ff0d00;
 }
 
 body {
@@ -110,6 +111,15 @@ button {
     color: var(--yellow);
 }
 
+.supply-quantity-span .low-stock {
+    color: var(--bright-red);
+}
+
+.supply-quantity-span .no-stock {
+    color: var(--bright-red);
+    font-weight: bold;
+}
+
 .two-block-div {
     display: flex;
     flex-direction: row;
@@ -125,12 +135,20 @@ button {
     align-self: center;
 }
 
-.order-list-table {
+.orders-table {
     width: 99%;
 }
 
-.customer-list-table {
+.customers-table {
     min-width: 40%;
+}
+
+.employees-table {
+    min-width: 60%;
+}
+
+.supplies-table {
+    min-width: 25%;
 }
 
 .generic-btn {

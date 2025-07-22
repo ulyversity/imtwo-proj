@@ -28,7 +28,7 @@ class User {
         $this->Username = $data['Username'];
         $this->Email = $data['Email'];
         $this->Password = $data['Password'];
-        $this->Birthdate = $data['Birthdate'];
+        $this->Birthdate = $data['Birthdate'] ?? '';
         $this->IsActive = (bool) $data['IsActive'];
         $this->CreatedAt = $data['CreatedAt'];
         $this->UpdatedAt = $data['UpdatedAt'];

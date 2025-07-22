@@ -22,27 +22,25 @@ else {
     die();
 }
 ?>
-<h1>CLAIM ORDER#<?php echo $currentOrderID?></h1>
 
+<main id="wrapper">
+    <h1>CLAIM ORDER#<?php echo $currentOrderID?></h1>
 
+    <?php if($currentOrderDetail->Status != "Completed"): ?>
+        <p>Your Order is <?php echo $currentOrderDetail->Status ?> </p>
+    <?php 
+        elseif ($currentOrderDetail->RemainingBalance == 0): 
+            $claimSlipRepository = new ClaimSlipRepository();
+            $currentClaimSlip = $claimSlipRepository->query("SELECT * FROM ClaimSlips WHERE OrderID = $currentOrderID")[0];
+            $currentClaimSlip->DateClaimed = date('Y-m-d H:i:s');
+            $claimSlipRepository->update($currentClaimSlip);
+    ?>
+        <p>Order Claimed Successfully</p>
+    <?php else: ?>
+        <p>You have Remaining Balance. <a href="pay-order.php?orderID=<?php echo $currentOrderID?>">Pay Here</a></p>
+    <?php endif; ?>
 
-<?php if($currentOrderDetail->Status != "Completed"): ?>
-    <p>Your Order is <?php echo $currentOrderDetail->Status ?> </p>
-<?php 
-    elseif ($currentOrderDetail->RemainingBalance == 0): 
-        $claimSlipRepository = new ClaimSlipRepository();
-        $currentClaimSlip = $claimSlipRepository->query("SELECT * FROM ClaimSlips WHERE OrderID = $currentOrderID")[0];
-        $currentClaimSlip->DateClaimed = date('Y-m-d H:i:s');
-        $claimSlipRepository->update($currentClaimSlip);
-?>
-    <p>Order Claimed Successfully</p>
-<?php else: ?>
-    <p>You have Remaining Balance. <a href="pay-order.php?orderID=<?php echo $currentOrderID?>">Pay Here</a></p>
-<?php endif; ?>
-
-<a href="view-order.php?orderID=<?php echo $currentOrderID?>" class="generic-btn">Back</a>
-
-
-
+    <a href="view-order.php?orderID=<?php echo $currentOrderID?>" class="generic-btn">Back</a>
+</main>
 
 <?php include_once "template/footer.php"; ?>

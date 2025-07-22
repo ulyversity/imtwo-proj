@@ -47,35 +47,113 @@ else:
     $maxLoadCount = $orderRepository->getMaxLoadCounttOrder();
 ?>
 
-<h1>ANALYTICS</h1>
-<h2>Sales Overview</h2>
-<p>Total Sales Today: ₱ <?php echo $totalSalesToday ?></p>
-<p>Total Sales This Week: ₱ <?php echo $totalSalesThisWeek ?></p>
-<p>Total Sales: ₱ <?php echo $totalSales ?></p>
-<p>Collection: ₱ <?php echo $totalAmountPaid ?></p>
-<p>Remaining Balance: ₱ <?php echo $remainingBalance ?></p>
+<main id="wrapper">
+    <h1>ANALYTICS</h1>
 
-<h2>Orders</h2>
-<p>Total Orders: <?php echo count($orderList) ?></p>
-<p>Not Paid: <?php echo count($notPaidList) ?></p>
-<p>Partially Paid: <?php echo count($partiallyPaidList) ?></p>
-<p>Fully Paid: <?php echo count($fullyPaidList) ?></p>
+    <div class="analytics-group-container">
+        <h2 class="analytics-group-header">Sales Overview</h2>
+        <div class="analytics-group-stat-container">
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text">₱ <?php echo $totalSalesToday ?></span>
+                <p>Total Sales Today </p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> ₱ <?php echo $totalSalesThisWeek ?> </span>
+                <p>Total Sales This Week </p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text">₱ <?php echo $totalSales ?> </span>
+                <p>Total Sales</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text">₱ <?php echo $totalAmountPaid ?> </span>
+                <p>Collection </p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text">₱ <?php echo $remainingBalance ?> </span>
+                <p>Remaining Balance </p>
+            </div>
+            
+        </div>
+    </div>
 
-<h2>Services</h2>
-<p>Best Service: <?php echo $bestService->Name ?></p>
-<p>Regular Laundry: <?php echo count($regularLaundryList) ?></p>
-<p>Wash and Fold: <?php echo count($washAndFoldList) ?></p>
-<p>Dry Cleaning: <?php echo count($dryCleaningList) ?></p>
-<p>Iron and Press: <?php echo count($ironAndPressList) ?></p>
+    <div class="analytics-group-container">
+        <h2 class="analytics-group-header">Orders</h2>
+        <div class="analytics-group-stat-container">
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($orderList) ?> </span>
+                <p>Total Orders </p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($notPaidList) ?> </span>
+                <p>Not Paid </p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"><?php echo count($partiallyPaidList) ?></span>
+                <p>Partially Paid</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"><?php echo count($fullyPaidList) ?></span>
+                <p>Fully Paid</p>
+            </div>
+            
+        </div>
+    </div>
 
-<h2>Order Status</h2>
-<p>Pending Orders: <?php echo count($pendingOrders) ?></p>
-<p>In Progress Orders: <?php echo count($inProgressOrders) ?></p>
-<p>Completed Orders: <?php echo count($completedOrders) ?></p>
+    <div class="analytics-group-container">
+        <h2 class="analytics-group-header">Services</h2>
+        <div class="analytics-group-stat-container">
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo $bestService->Name ?> </span>
+                <p>Best Service</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($regularLaundryList) ?></span>
+                <p>Regulary Laundry</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($washAndFoldList) ?> </span>
+                <p>Wash and Fold</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($dryCleaningList) ?> </span>
+                <p>Dry Cleaning</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($ironAndPressList) ?> </span>
+                <p>Iron and Press</p>
+            </div>
+            
+        </div>
+    </div>
 
-<h2>Misc</h2>
-<p>Highest kg order: <?php echo $maxLoadCount ?>kg</p>
+    <div class="analytics-group-container">
+        <h2 class="analytics-group-header">Order Status</h2>
+        <div class="analytics-group-stat-container">
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($pendingOrders) ?> </span>
+                <p>Pending</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($inProgressOrders) ?> </span>
+                <p>In Progress</p>
+            </div>
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo count($completedOrders) ?> </span>
+                <p>Completed</p>
+            </div>
+        </div>
+    </div>
 
-<h2>Supplies</h2>
+    <div class="analytics-group-container">
+        <h2 class="analytics-group-header">Misc</h2>
+        <div class="analytics-group-stat-container">
+            <div class="analytics-stat-container">
+                <span class="analytics-stat-text"> <?php echo $maxLoadCount ?> kg</span>
+                <p>Heaviest Load Count</p>
+            </div>
+        </div>
+    </div>
+</main>
 
 <?php endif; include_once "template/footer.php"; ?>

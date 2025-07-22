@@ -3,39 +3,56 @@ $pageTitle = "Add Order";
 $includeNavbar = true;
 include_once "template/header.php";
 ?>
-<h1>ADD ORDER</h1>
 
+<main id="wrapper">
+    <h1>ADD ORDER</h1>
+    <form action="server/endpoints/add_order_action.php" method="POST" class="form-container">
+        <div class="form-input-container">
+            <div class="form-row">
+                <label for="txtFirstName">Firstname: </label>
+                <input type="text" id="txtFirstName" class="generic-txt" name="firstName">
+            </div>
 
-<form action="server/endpoints/add_order_action.php" method="POST">
-    <label for="txtFirstName">Firstname: </label>
-    <input type="text" id="txtFirstName" class="generic-txt" name="firstName">
+            <div class="form-row">
+                <label for="txtLastName">Lastname: </label>
+                <input type="text" id="txtLastName" class="generic-txt" name="lastName">
+            </div>
 
-    <label for="txtLastName">Lastname: </label>
-    <input type="text" id="txtLastName" class="generic-txt" name="lastName">
+            <div class="form-row">
+                <label for="txtPhoneNumber">Phone Number:</label>
+                <input type="text" id="txtPhoneNumber" class="generic-txt" name="phoneNumber">
+            </div>
 
-    <label for="txtPhoneNumber">Phone Number:</label>
-    <input type="text" id="txtPhoneNumber" class="generic-txt" name="phoneNumber">
+            <div class="form-row">
+                <label for="numLoadCount">Load Count:</label>
+                <input type="number" id="numLoadCount" class="generic-txt" name="loadCount" min="3" value="3"><span>KG</span>
+            </div>
 
-    <label for="numLoadCount">Load Count:</label>
-    <input type="number" id="numLoadCount" class="generic-txt" name="loadCount" min="3" value="3"><span>KG</span>
+            <div class="form-row">
+                <label for="cmbService">Service:</label>
+                <select name="serviceTypeID" id="cmbService" class="generic-cmb">
+                    <?php require "server/views/ServiceTypesDropDownView.php"; ?>
+                </select>
+            </div>
 
-    <label for="cmbService">Service:</label>
-    <select name="serviceTypeID" id="cmbService" class="generic-cmb">
-        <?php require "server/views/ServiceTypesDropDownView.php"; ?>
-    </select>
+            <div class="form-row">
+                <label for="txtTotalAmount">Total Amount</label>
+                <input type="text" id="txtTotalAmount" class="generic-txt" readonly>
+            </div>
 
-    <label for="txtTotalAmount">Total Amount</label>
-    <input type="text" id="txtTotalAmount" class="generic-txt" readonly>
-    
-    <label for="txtAmountPaid">Amount Paid:</label>
-    <input type="text" id="txtAmountPaid" class="generic-txt" name="amountPaid" value="0">
+            <div class="form-row">
+                <label for="txtAmountPaid">Amount Paid:</label>
+                <input type="text" id="txtAmountPaid" class="generic-txt" name="amountPaid" value="0">
+            </div>
 
-    <label for="txtBalance">Balance:</label>
-    <input type="text" id="txtBalance" class="generic-txt" value="0" readonly>
-
-    <button class="generic-btn">SEND</button>
-    
-</form>
+            <div class="form-row">
+                <label for="txtBalance">Balance:</label>
+                <input type="text" id="txtBalance" class="generic-txt" value="0" readonly>
+            </div>
+        </div>
+        <button class="generic-btn">SEND</button>
+    </form>
+</main>
 
 <script>
     let loadCount = 3;

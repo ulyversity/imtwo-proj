@@ -12,25 +12,27 @@ $customerList = $claimSlipRepository->getUniqueCustomers();
     const customerList = <?php echo json_encode($customerList) ?>;
 </script>
 
-<h1>CUSTOMERS</h1>
+<main id="wrapper">
+    <h1>CUSTOMERS</h1>
 
-<div class="filter-container">
-    <label for="txtName">Search: </label>
-    <input type="text" id="txtName" class="generic-txt" placeholder="Name or Number">    
-</div>
+    <div class="filter-container">
+        <label for="txtName">Search: </label>
+        <input type="text" id="txtName" class="generic-txt" placeholder="Name or Number">    
+    </div>
 
-<table class="generic-table customer-list-table">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone Number</th>
-            <th>Total Orders</th> 
-        </tr>
-    </thead>
-    <tbody id="customer-table-body">
-    </tbody>
-</table>
+    <table class="generic-table customer-list-table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Total Orders</th> 
+            </tr>
+        </thead>
+        <tbody id="customer-table-body">
+        </tbody>
+    </table>
+</main>
 
 <script>
 
@@ -47,23 +49,12 @@ $customerList = $claimSlipRepository->getUniqueCustomers();
         for(const customer of curCustomerList)
         {
             const currentRow = document.createElement('tr');
-            
-            const firstNameCell = document.createElement('td');
-            firstNameCell.textContent = customer.FirstName;
-            currentRow.appendChild(firstNameCell);
-
-            const lastNameCell = document.createElement('td');
-            lastNameCell.textContent = customer.LastName;
-            currentRow.appendChild(lastNameCell);
-
-            const phoneNumberCell = document.createElement('td');
-            phoneNumberCell.textContent = customer.PhoneNumber;
-            currentRow.appendChild(phoneNumberCell);
-
-            const totalOrdersCell = document.createElement('td');
-            totalOrdersCell.textContent = customer.TotalOrders;
-            currentRow.appendChild(totalOrdersCell);
-
+            for(const [key, value] of Object.entries(customer))
+            {
+                const curCell = document.createElement('td');
+                curCell.textContent = value;
+                currentRow.appendChild(curCell);
+            }
             customerTableBody.appendChild(currentRow);
         }
     }

@@ -150,14 +150,72 @@ button {
     padding: 0.3rem .75rem;
 }
 
-.view-order-a {
+.generic-a {
     color: var(--yellow);
 }
 
-.view-order-a:hover {
+.generic-a:hover {
     font-weight: bold;
 }
 
 .filter-container {
     margin-bottom: 1rem;
+}
+
+.zero-margin {
+    margin: 0;
+}
+
+.analytics-group-stat-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.analytics-stat-container {
+    background-color: var(--white);
+    color: var(--darkblue);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.analytics-stat-text {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.view-order-header-container {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.view-order-status {
+    background-color: var(--white);
+    color: var(--darkerblue);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.form-input-container {
+    display:flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: .5rem;
+    padding-bottom: .5rem;
+}
+
+.form-row input, .form-row select {
+    flex-grow: 1;
+}
+
+#wrapper {
+    margin: 0 auto;
+    max-width: 1400px;
 }

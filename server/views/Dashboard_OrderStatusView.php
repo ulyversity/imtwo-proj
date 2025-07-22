@@ -10,7 +10,7 @@ $completedOrders = array_values(array_filter($orderList, fn($order) => $order->S
 ?>
 
 <div class="pending-order-div">
-    <p class="pending-order-p">Pending Orders: <?php echo count($pendingOrders) ?></p>
-    <p class="pending-order-p">In Progress Orders: <?php echo count($inProgressOrders) ?></p>
-    <p class="pending-order-p">Completed Orders: <?php echo count($completedOrders) ?></p>
+    <h2 class="pending-order-p"><a href="http://localhost/im-two-project/order.php?orderStatus=1" class="generic-a">Pending Orders: <?php echo count($pendingOrders) ?></a></h2>
+    <h2 class="pending-order-p"><a href="http://localhost/im-two-project/order.php?orderStatus=2" class="generic-a">In Progress Orders: <?php echo count($inProgressOrders) ?></a></h2>
+    <h2 class="pending-order-p"><a href="http://localhost/im-two-project/order.php?orderStatus=3" class="generic-a">Completed Orders: <?php echo count($completedOrders) ?></a></h2>
 </div>

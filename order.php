@@ -11,10 +11,9 @@ $orderDetails = $orderDetailRepository->getAll();
 
 ?>
 <script>
-    let orderStatus = null;
-    <?php if (isset($_GET['orderStatus'])): ?>
-        orderStatus = <?php echo $_GET['orderStatus']?>;
-    <?php endif; ?>
+    let orderStatus = <?php echo isset($_GET['orderStatus']) ? $_GET['orderStatus'] :  "''";?>;
+    let customerName = <?php echo isset($_GET['customerName']) ? "'$_GET[customerName]'" : "''";?>;
+
     const orderDetailList = <?php echo json_encode($orderDetails) ?>;
 </script>
 
@@ -76,10 +75,11 @@ $orderDetails = $orderDetailRepository->getAll();
 </main>
 
 <script>
-    if (orderStatus != null)
-    {
+    if (orderStatus !== '')
         cmbOrderStatus.selectedIndex = orderStatus;
-    }
+
+    if (customerName !== '')
+        txtSearchNameOrNumber.value = customerName;
 
     document.getElementById("txtSearchNameOrNumber").addEventListener('keyup', (event)=> {
         filterList();

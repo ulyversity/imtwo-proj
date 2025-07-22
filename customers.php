@@ -52,7 +52,13 @@ $customerList = $claimSlipRepository->getUniqueCustomers();
             for(const [key, value] of Object.entries(customer))
             {
                 const curCell = document.createElement('td');
-                curCell.textContent = value;
+                if (key === "TotalOrders")
+                {
+                    let name = `${customer.FirstName} ${customer.LastName}`;
+                    curCell.innerHTML = `<a href='order.php?customerName=${name}' class='generic-a'>${value}</a>`;
+                }
+                else 
+                    curCell.textContent = value;
                 currentRow.appendChild(curCell);
             }
             customerTableBody.appendChild(currentRow);

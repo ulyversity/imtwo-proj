@@ -5,7 +5,7 @@ $orderDetailRepository = new OrderDetailRepository();
 $orderDetails = $orderDetailRepository->getAll();
 ?>
 
-<table class="order-list-table">
+<table class="generic-table order-list-table ">
     <thead>
         <tr>
             <th>Order #</th>
@@ -27,7 +27,7 @@ $orderDetails = $orderDetailRepository->getAll();
                 <?php foreach ($orders as $key => $value): ?>
                 <td>
                     <?php if($key === "ID"): ?>
-                        <a href='view-order.php?orderID=<?php echo$value ?>'> <?php echo $value ?></a>
+                        <a href='view-order.php?orderID=<?php echo$value ?>' class='view-order-a '> <?php echo $value ?></a>
                     <?php elseif($key === "DateClaimed" && $value !== ''): echo "✔️";?>
                     <?php else: echo $value; endif;?>
                 </td>

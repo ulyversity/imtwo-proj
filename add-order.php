@@ -8,32 +8,32 @@ include_once "template/header.php";
 
 <form action="server/endpoints/add_order_action.php" method="POST">
     <label for="txtFirstName">Firstname: </label>
-    <input type="text" id="txtFirstName" name="firstName">
+    <input type="text" id="txtFirstName" class="generic-txt" name="firstName">
 
     <label for="txtLastName">Lastname: </label>
-    <input type="text" id="txtLastName" name="lastName">
+    <input type="text" id="txtLastName" class="generic-txt" name="lastName">
 
     <label for="txtPhoneNumber">Phone Number:</label>
-    <input type="text" id="txtPhoneNumber" name="phoneNumber">
+    <input type="text" id="txtPhoneNumber" class="generic-txt" name="phoneNumber">
 
     <label for="numLoadCount">Load Count:</label>
-    <input type="number" id="numLoadCount" name="loadCount" min="3" value="3"><span>KG</span>
+    <input type="number" id="numLoadCount" class="generic-txt" name="loadCount" min="3" value="3"><span>KG</span>
 
     <label for="cmbService">Service:</label>
-    <select name="serviceTypeID" id="cmbService">
+    <select name="serviceTypeID" id="cmbService" class="generic-cmb">
         <?php require "server/views/ServiceTypesDropDownView.php"; ?>
     </select>
 
     <label for="txtTotalAmount">Total Amount</label>
-    <input type="text" id="txtTotalAmount" readonly>
+    <input type="text" id="txtTotalAmount" class="generic-txt" readonly>
     
     <label for="txtAmountPaid">Amount Paid:</label>
-    <input type="text" id="txtAmountPaid" name="amountPaid" value="0">
+    <input type="text" id="txtAmountPaid" class="generic-txt" name="amountPaid" value="0">
 
     <label for="txtBalance">Balance:</label>
-    <input type="text" id="txtBalance" value="0" readonly>
+    <input type="text" id="txtBalance" class="generic-txt" value="0" readonly>
 
-    <button>SEND</button>
+    <button class="generic-btn">SEND</button>
     
 </form>
 

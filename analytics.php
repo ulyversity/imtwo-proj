@@ -14,7 +14,7 @@ else:
     $orderList = $orderRepository->getAll();
     $totalSales = $orderRepository->getTotalSales();
     $totalSalesThisWeek = $orderRepository->getTotalSalesThisWeek();
-    $totalSalesToday = $orderRepository->getTotalSalesToday();
+    $totalSalesToday = $orderRepository->getTotalSalesToday() ?? '0';
     $remainingBalance = $orderRepository->getRemainingBalance();
     $totalAmountPaid = $orderRepository->getTotalAmountPaid();
     

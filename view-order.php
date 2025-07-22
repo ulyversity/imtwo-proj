@@ -39,21 +39,21 @@ $currentStatus = $statusRepository->query("SELECT * FROM Status WHERE Name = '$c
 <p>Total: <?php echo $currentOrderDetail->Total ?> </p>
 <p>Remaining Balance: <?php echo $currentOrderDetail->RemainingBalance ?> </p> <a href=""></a>
 <p>Date Due: <?php echo $currentOrderDetail->DateDue ?> </p>
-<!-- handled by or something -->
-<p>Staff: <?php echo $currentOrderDetail->Staff ?> </p>
+<p>Is Claimed: <?php echo empty($currentOrderDetail->DateClaimed) ? "No" : "Yes" ?> </p>
+<p>Handled By: <?php echo $currentOrderDetail->Staff ?> </p>
 
-<a href="pay-order.php?orderID=<?php echo $currentOrderID?>"><button>Pay Order</button></a>
-<a href="claim-order.php?orderID=<?php echo $currentOrderID?>"><button>Claim Order</button></a>
+<a href="pay-order.php?orderID=<?php echo $currentOrderID?>" ><button class="generic-btn">Pay Order</button></a>
+<a href="claim-order.php?orderID=<?php echo $currentOrderID?>"><button class="generic-btn">Claim Order</button></a>
 
 
 <h2>Change Status</h2>
 <form action="server/endpoints/change_order_status_action.php" method="POST">
     <input type="hidden" name="orderID" value="<?php echo $currentOrderID ?>">
     <label for="cmbStatus">Current Status:</label>
-    <select name="statusID" id="cmbStatus" >
+    <select name="statusID" id="cmbStatus" class="generic-cmb">
         <?php require "server/views/StatusDropDownView.php"; ?>
     </select>
-    <button>Change</button>
+    <button class="generic-btn">Change</button>
 </form>
 
 <script>

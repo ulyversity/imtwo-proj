@@ -14,10 +14,12 @@ $customerList = $claimSlipRepository->getUniqueCustomers();
 
 <h1>CUSTOMERS</h1>
 
-<label for="txtName">Search: </label>
-<input type="text" id="txtName">    
+<div class="filter-container">
+    <label for="txtName">Search: </label>
+    <input type="text" id="txtName" class="generic-txt" placeholder="Name or Number">    
+</div>
 
-<table>
+<table class="generic-table customer-list-table">
     <thead>
         <tr>
             <th>First Name</th>

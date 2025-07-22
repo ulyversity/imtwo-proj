@@ -29,14 +29,16 @@ else {
 <form action="server/endpoints/pay_order_action.php" method="POST">
     <input type="hidden" name="orderID" value="<?php echo $currentOrderID ?>">
     <label for="txtTotalAmount">Total: </label>
-    <input type="text" name="total" id="txtTotalAmount" value="<?php echo $currentOrderDetail->Total ?>"  readonly>
+    <input type="text" name="total" id="txtTotalAmount" value="<?php echo $currentOrderDetail->Total ?>"  class="generic-txt" readonly>
     <label for="txtRemaningBalance">Remaining Balance: </label>
-    <input type="text" name="remainingBalance" id="txtRemaningBalance" value="<?php echo $currentOrderDetail->RemainingBalance ?>"  readonly>
+    <input type="text" name="remainingBalance" id="txtRemaningBalance" value="<?php echo $currentOrderDetail->RemainingBalance ?>"  class="generic-txt" readonly>
     <label for="txtAmount">Amount: </label>
-    <input type="text" name="amountPaid" id="txtAmount">
+    <input type="text" name="amountPaid" id="txtAmount" class="generic-txt">
 
     <?php if ($currentOrderDetail->RemainingBalance > 0): ?>
-        <button>Pay</button>
+        <button class="generic-btn">Pay</button>
+    <?php else: ?>
+        <a href="view-order.php?orderID=<?php echo $currentOrderID?>" class="generic-btn">Back</a>
     <?php endif; ?>
 </form>
 

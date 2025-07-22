@@ -40,6 +40,8 @@ else {
     <p>You have Remaining Balance. <a href="pay-order.php?orderID=<?php echo $currentOrderID?>">Pay Here</a></p>
 <?php endif; ?>
 
+<a href="view-order.php?orderID=<?php echo $currentOrderID?>" class="generic-btn">Back</a>
+
 
 
 

@@ -22,7 +22,7 @@ else {
     die();
 }
 ?>
-<h1>Claim Order#<?php echo $currentOrderID?></h1>
+<h1>CLAIM ORDER#<?php echo $currentOrderID?></h1>
 
 
 

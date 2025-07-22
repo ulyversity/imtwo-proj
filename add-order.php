@@ -3,7 +3,7 @@ $pageTitle = "Add Order";
 $includeNavbar = true;
 include_once "template/header.php";
 ?>
-<h1>Add Order</h1>
+<h1>ADD ORDER</h1>
 
 
 <form action="server/endpoints/add_order_action.php" method="POST">

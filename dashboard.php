@@ -3,6 +3,7 @@ $pageTitle = "Dashboard";
 $includeNavbar = true;
 include_once "template/header.php";
 ?>
+<h1>DASHBOARD</h1>
 
 <div class="two-block-div">
     <?php

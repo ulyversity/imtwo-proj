@@ -12,6 +12,8 @@ $customerList = $claimSlipRepository->getUniqueCustomers();
     const customerList = <?php echo json_encode($customerList) ?>;
 </script>
 
+<h1>CUSTOMERS</h1>
+
 <label for="txtName">Search: </label>
 <input type="text" id="txtName">    
 

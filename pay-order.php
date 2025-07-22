@@ -25,7 +25,7 @@ else {
 
 
 
-<h1>Pay Order For Order#<?php echo $currentOrderID; ?></h1>
+<h1>PAY FOR ORDER#<?php echo $currentOrderID; ?></h1>
 <form action="server/endpoints/pay_order_action.php" method="POST">
     <input type="hidden" name="orderID" value="<?php echo $currentOrderID ?>">
     <label for="txtTotalAmount">Total: </label>

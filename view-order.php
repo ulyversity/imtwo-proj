@@ -31,7 +31,7 @@ $statusRepository = new StatusRepository();
 $currentStatus = $statusRepository->query("SELECT * FROM Status WHERE Name = '$currentOrderDetail->Status';")[0];
 
 ?>
-<h1>Order ID#<?php echo $currentOrderID ?></h1>
+<h1>ORDER ID#<?php echo $currentOrderID ?></h1>
 <p>Customer Details: <?php echo "$currentOrderDetail->Customer $currentOrderDetail->CustomerNumber"?></p> 
 <p>Status: <?php echo $currentOrderDetail->Status ?></p>
 <p>Service Type: <?php echo $currentOrderDetail->Services ?></p>

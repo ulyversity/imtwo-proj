@@ -190,12 +190,21 @@ button {
     gap: 1rem;
 }
 
+/* literally the same thing */
 .view-order-status {
     background-color: var(--white);
     color: var(--darkerblue);
     padding: 0.5rem 1rem;
     border-radius: 10px;
 }
+.pay-order-remarks {
+    background-color: var(--white);
+    color: var(--darkerblue);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    
+}
+/* literally the same thing */
 
 .form-input-container {
     display:flex;

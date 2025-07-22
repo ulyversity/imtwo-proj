@@ -49,7 +49,7 @@ else {
         <?php endif; ?>
     </form>
 
-    <p>Remarks:  
+    <span class="pay-order-remarks">Remarks:  
     <?php if ($currentOrderDetail->RemainingBalance == 0)
         echo "Fully Paid";
     elseif ($currentOrderDetail->RemainingBalance == $currentOrderDetail->Total)
@@ -57,7 +57,7 @@ else {
     else
         echo "Partially Paid"; 
     ?>
-    </p>
+    </span>
 </main>
 
 <?php include_once "template/footer.php"; ?>
